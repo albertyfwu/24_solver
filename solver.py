@@ -55,10 +55,7 @@ if __name__ == '__main__':
     raw = raw_input("Enter a list of numbers: ")
 
     # process
-    raw = raw.replace(' ', '')
-    raw = raw.strip(',')
-    raw_list = raw.split(',')
-    raw_list = [int(elem) for elem in raw_list]
+    raw_list = [int(elem) for elem in raw.strip(',').replace(' ', '').split(',')]
 
     print 'Solutions:'
     disp(solve(raw_list, 24))
