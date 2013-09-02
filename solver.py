@@ -1,14 +1,18 @@
 from expression import *
 from itertools import permutations
 
+ops = '+-*/'
+
 def init(nums):
+  """Initialize a list of Constant instances given a list of numbers."""
   result = []
   for num in nums:
     result.append(Constant(num))
   return result
 
 def gen(exprs):
-  # given a list of expressions, generates a list of all possible expressions
+  """Given a list of expressions, generates a list of all possible expressions
+  using all of the given expressions."""
   if len(exprs) == 1:
     return exprs
   else:
@@ -28,6 +32,9 @@ def gen(exprs):
     return result
 
 def solve(nums, goal):
+  """Given a list of numbers and a goal number, solves for ways to apply
+  addition, subtraction, multiplication, division to the list of numbers
+  to obtain the goal number."""
   result = set()
   inits = init(nums)
   inits_list = permutations(inits)
@@ -39,6 +46,7 @@ def solve(nums, goal):
   return result
 
 def disp(exprs):
+  """Print the list of expressions line by line."""
   for expr in exprs:
     print expr
 
