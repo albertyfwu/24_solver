@@ -1,6 +1,7 @@
 from expression import *
 from itertools import permutations
 
+game_goal = 24
 ops = '+-*/'
 
 def init(nums):
@@ -58,5 +59,5 @@ if __name__ == '__main__':
     raw_list = [int(elem) for elem in raw.strip(',').replace(' ', '').split(',')]
 
     print 'Solutions:'
-    disp(solve(raw_list, 24))
+    disp(solve(raw_list, game_goal))
     print 'End of Solutions\n'
